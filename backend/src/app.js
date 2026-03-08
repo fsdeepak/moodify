@@ -6,6 +6,7 @@ dotevn.config();
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const authRoute = require("./routes/auth.routes");
+const songRoute = require("./routes/song.routes");
 const cors = require("cors");
 
 const app = express();
@@ -20,5 +21,7 @@ app.use(
 );
 
 app.use("/api/auth", authRoute);
+
+app.use("/api/songs", songRoute);
 
 module.exports = app;
